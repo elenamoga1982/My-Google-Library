@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="GoogleBook" representedClassName=".Book" syncable="YES">
+        <attribute name="authors" optional="YES" attributeType="String"/>
+        <attribute name="coverImage" optional="YES" attributeType="Transformable"/>
+        <attribute name="coverURL" optional="YES" attributeType="String"/>
+        <attribute name="isbn" optional="YES" attributeType="String"/>
+        <attribute name="language" optional="YES" attributeType="String"/>
+        <attribute name="pagesAttr" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="publishedDateAttr" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="publishedDateTypeAttr" optional="YES" attributeType="String"/>
+        <attribute name="publisher" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <fetchIndex name="byAuthorsIndex">
+            <fetchIndexElement property="authors" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byTitleIndex">
+            <fetchIndexElement property="title" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byIsbnIndex">
+            <fetchIndexElement property="isbn" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="isbn"/>
+            </uniquenessConstraint>
+            <uniquenessConstraint>
+                <constraint value="title"/>
+                <constraint value="authors"/>
+                <constraint value="publisher"/>
+                <constraint value="publishedDateAttr"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="GoogleBook" positionX="-63" positionY="-18" width="128" height="193"/>
+    </elements>
+</model>
